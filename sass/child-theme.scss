@@ -9,3 +9,80 @@
 
 // Any additional imported files //
 @import "theme/child_theme";  // <--------- Add your styles into this file
+
+body {
+    padding-top: 108px;
+}
+
+#wrapper-navbar {
+    top: 0;
+    position: fixed; 
+    right: 0;
+    left: 0;
+    z-index: 999;
+}
+    
+.custom-logo-link img {
+    width: 300px;
+}
+
+.navbar.bg-primary {
+	background-color: #fff !important;
+    font-family: 'Sintony', sans-serif;
+    border-bottom: 4px solid #639c3d;
+}
+
+.navbar-nav .nav-link {
+	font-family: 'Sintony', sans-serif;
+    color: #194189 !important;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .cta {
+    border-radius: 5px;
+    border: 0px solid white;
+}
+
+.navbar-dark .navbar-nav .cta .nav-link {
+    color: #fff !important;
+    border-radius: 5px;
+    border: 0 solid #fff;
+}
+
+li.cta a  {
+	background-color: #639c3d;
+	text-align: center;
+    border: 0 solid #fff;
+    width: 150px;
+    padding: 7px 25px;
+    margin-left: 25px;
+}
+
+#wrapper-footer {
+    background-color: #194189;
+    color :#fff;
+}
+/* Responsive Breakpoints */
+
+@media screen and (max-width: 1000px) {
+
+    .custom-logo-link img {
+        width: 200px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: .8rem;
+    }
+}
+
+  @media screen and (max-width: 1000px) {
+    .custom-logo-link img {
+        width: 300px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+}

@@ -1668,26 +1668,6 @@ pre {
   .wpcf7 textarea::-webkit-input-placeholder, .wpcf7 .wpcf7-validation-errors::-webkit-input-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:-ms-input-placeholder, .wpcf7 input[type=text]:-ms-input-placeholder,
-  .wpcf7 input[type=search]:-ms-input-placeholder,
-  .wpcf7 input[type=url]:-ms-input-placeholder,
-  .wpcf7 input[type=tel]:-ms-input-placeholder,
-  .wpcf7 input[type=number]:-ms-input-placeholder,
-  .wpcf7 input[type=range]:-ms-input-placeholder,
-  .wpcf7 input[type=date]:-ms-input-placeholder,
-  .wpcf7 input[type=month]:-ms-input-placeholder,
-  .wpcf7 input[type=week]:-ms-input-placeholder,
-  .wpcf7 input[type=time]:-ms-input-placeholder,
-  .wpcf7 input[type=datetime]:-ms-input-placeholder,
-  .wpcf7 input[type=datetime-local]:-ms-input-placeholder,
-  .wpcf7 input[type=color]:-ms-input-placeholder,
-  .wpcf7 input[type=email]:-ms-input-placeholder,
-  .wpcf7 input[type=file]:-ms-input-placeholder,
-  .wpcf7 input[type=submit]:-ms-input-placeholder,
-  .wpcf7 select:-ms-input-placeholder,
-  .wpcf7 textarea:-ms-input-placeholder, .wpcf7 .wpcf7-validation-errors:-ms-input-placeholder {
-    color: #6c757d;
-    opacity: 1; }
   .form-control::-ms-input-placeholder, .wpcf7 input[type=text]::-ms-input-placeholder,
   .wpcf7 input[type=search]::-ms-input-placeholder,
   .wpcf7 input[type=url]::-ms-input-placeholder,
@@ -7076,7 +7056,7 @@ button.bg-dark:focus {
     top: 0;
     z-index: 1020; } }
 
-.sr-only {
+.sr-only, .screen-reader-text {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -7382,7 +7362,8 @@ button.bg-dark:focus {
   margin-top: auto !important; }
 
 .mr-auto,
-.mx-auto {
+.mx-auto,
+.aligncenter {
   margin-right: auto !important; }
 
 .mb-auto,
@@ -7390,7 +7371,8 @@ button.bg-dark:focus {
   margin-bottom: auto !important; }
 
 .ml-auto,
-.mx-auto {
+.mx-auto,
+.aligncenter {
   margin-left: auto !important; }
 
 @media (min-width: 576px) {
@@ -8364,9 +8346,6 @@ a.text-dark:hover, a.text-dark:focus {
 .wp-caption-text {
   font-size: inherit; }
 
-.screen-reader-text {
-  font-size: inherit; }
-
 .alignleft {
   display: inline;
   float: left;
@@ -8377,14 +8356,8 @@ a.text-dark:hover, a.text-dark:focus {
   float: right;
   margin-left: 1.5em; }
 
-.aligncenter {
-  margin: 0px auto; }
-
 .entry-footer span {
   padding-right: 10px; }
-
-figure.woocommerce-product-gallery__wrapper {
-  max-width: inherit !important; }
 
 img.wp-post-image,
 article img,
@@ -8435,6 +8408,9 @@ a.skip-link {
   color: #fff; }
   .navbar-dark .navbar-brand a:hover, .navbar-dark .navbar-brand a:focus {
     color: #fff; }
+
+.navbar h1 {
+  font-weight: 400; }
 
 /*
 * Use existing Bootstrap 4 classes and
@@ -10794,3 +10770,61 @@ a.skip-link {
 
 .gallery-caption {
   display: block; }
+
+body {
+  padding-top: 108px; }
+
+#wrapper-navbar {
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 999; }
+
+.custom-logo-link img {
+  width: 300px; }
+
+.navbar.bg-primary {
+  background-color: #fff !important;
+  font-family: 'Sintony', sans-serif;
+  border-bottom: 4px solid #639c3d; }
+
+.navbar-nav .nav-link {
+  font-family: 'Sintony', sans-serif;
+  color: #194189 !important;
+  font-size: 1.1rem;
+  font-weight: bold; }
+
+.navbar-dark .navbar-nav .cta {
+  border-radius: 5px;
+  border: 0px solid white; }
+
+.navbar-dark .navbar-nav .cta .nav-link {
+  color: #fff !important;
+  border-radius: 5px;
+  border: 0 solid #fff; }
+
+li.cta a {
+  background-color: #639c3d;
+  text-align: center;
+  border: 0 solid #fff;
+  width: 150px;
+  padding: 7px 25px;
+  margin-left: 25px; }
+
+#wrapper-footer {
+  background-color: #194189;
+  color: #fff; }
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1000px) {
+  .custom-logo-link img {
+    width: 200px; }
+  .navbar-nav .nav-link {
+    font-size: .8rem; } }
+
+@media screen and (max-width: 1000px) {
+  .custom-logo-link img {
+    width: 300px; }
+  .navbar-nav .nav-link {
+    font-size: 1rem; } }

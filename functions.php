@@ -28,3 +28,33 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+add_action('acf/init', 'my_acf_init');
+function my_acf_init() {
+	
+	// check function exists
+	if( function_exists('acf_register_block') ) {
+		
+		// register a testimonial block
+		acf_register_block(array(
+			'name'				=> 'Home-Slider',
+			'title'				=> __('Home Slider'),
+			'description'		=> __('A custom slider block.'),
+			'render_callback'	=> 'my_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'admin-comments',
+			'keywords'			=> array( 'home-slider', 'slide' ),
+		));
+	}
+}
+
+function my_acf_block_render_callback( $block ) {
+	
+	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
+	$slug = str_replace('acf/', '', $block['name']);
+	
+	// include a template part from within the "template-parts/block" folder
+	if( file_exists(STYLESHEETPATH . "/page-templates/block/content-{$slug}.php") ) {
+		include( STYLESHEETPATH . "/page-templates/block/content-{$slug}.php" );
+	}
+}
