@@ -58,3 +58,6 @@ function my_acf_block_render_callback( $block ) {
 		include( STYLESHEETPATH . "/page-templates/block/content-{$slug}.php" );
 	}
 }
+
+// disable for posts
+add_filter('use_block_editor_for_post', '__return_false', 10);
